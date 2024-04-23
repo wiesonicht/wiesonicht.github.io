@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link href="output.css" rel="stylesheet" />
+    <title>Hello from Electron renderer!</title>
+  </head>
+  <body
+    class="bg-gray-900 flex flex-col justify-center items-center h-screen gap-y-6 text-slate-300"
+  >
+    <select
+      id="dropdownMenu"
+      class="w-3/4 h-10 bg-slate-300 hover:bg-gray-500 text-center text-black rounded-full"
+    ></select>
+    <table
+      id="table"
+      class="rounded-3xl outline outline-1 outline-offset-4 outline-gray-300 w-3/4 text-center"
+    >
+      <thead>
+        <tr>
+          <th>Size</th>
+          <th>XS</th>
+          <th>S</th>
+          <th>M</th>
+          <th>L</th>
+          <th>X</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Anzahl:</td>
+          <td><input type="text" class="custom-tf" /></td>
+          <td><input type="text" class="custom-tf" /></td>
+          <td><input type="text" class="custom-tf" /></td>
+          <td><input type="text" class="custom-tf" /></td>
+          <td><input type="text" class="custom-tf" /></td>
+        </tr>
+        <tr>
+          <td>LUG:</td>
+          <td><input type="text" class="custom-tf" /></td>
+          <td><input type="text" class="custom-tf" /></td>
+          <td><input type="text" class="custom-tf" /></td>
+          <td><input type="text" class="custom-tf" /></td>
+          <td><input type="text" class="custom-tf" /></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="flex space-x-6">
+      <div class="space-y-1 text-center">
+        <div class="flex">
+          <p class="w-1/2">Menge:</p>
+          <input id="amount" type="text" class="custom-tf" />
+        </div>
+        <div class="flex">
+          <p class="w-1/2">Ziel LUG:</p>
+          <input id="targetLug" type="text" class="custom-tf" value="5" />
+        </div>
+      </div>
+      <button
+        id="calculate"
+        class="bg-blue-200 w-3/12 rounded-lg text-black hover:bg-gray-500"
+      >
+        Calculate
+      </button>
+    </div>
+    <table
+      id="output"
+      class="rounded-3xl outline outline-1 outline-offset-4 outline-gray-300 w-3/4 text-center"
+    >
+      <tbody>
+        <tr>
+          <td>Anzahl:</td>
+          <td>
+            <input id="outputField" type="text" class="custom-tf" />
+          </td>
+          <td><input type="text" class="custom-tf" /></td>
+          <td><input type="text" class="custom-tf" /></td>
+          <td><input type="text" class="custom-tf" /></td>
+          <td><input type="text" class="custom-tf" /></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+  <script src="./renderer.js"></script>
+</html>
