@@ -8,7 +8,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log(targetLug.value);
 
-  Object.keys(window.api.sizeruns).forEach((value) => {
+  const sizeruns = {
+    International: ["XS", "S", "M", "L", "XL"],
+    Pants: ["26", "28", "30", "32", "34", "36"],
+    German: ["44", "46", "48", "50", "52", "54"],
+    Japanese: ["1", "2", "3"]
+  }
+
+  Object.keys(sizeruns).forEach((value) => {
     const sizerun = document.createElement("option");
     sizerun.value = value;
     sizerun.text = value;
@@ -66,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   page.addEventListener("change", (event) => {
     const selectedPage = event.target.value;
-    const sizerun = window.api.sizeruns[selectedPage];
+    const sizerun = sizeruns[selectedPage];
     adaptTable(sizerun);
   });
 
